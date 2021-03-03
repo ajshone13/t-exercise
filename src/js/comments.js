@@ -21,6 +21,7 @@ class Comments {
     if ( this.commentsData ) {
       this.appendCommentsNum();
       this.appendComments(this.commentsData);
+      this.sortBy(this.commentsData);
     }
   }
 
@@ -71,6 +72,7 @@ class Comments {
 
   /**
    * comment html markup
+   * @return string
    */
   commentHTMLMarkup(comment) {
     return `
@@ -83,6 +85,36 @@ class Comments {
         <div class="item__content"><p>${comment.body}</p></div>
       </li>
     `;
+  }
+
+  /**
+   * sort comments by likes or date
+   */
+  sortBy(data) {
+    const sortByDatelink = document.querySelector('.sort__date');
+    const sortedDate = [...data].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    const sortByLikeslink = document.querySelector('.sort__likes');
+    const sortedLikes = [...data].sort((a, b) => b.likes - a.likes);
+
+    sortByDatelink.addEventListener('click', (e) => {
+      e.preventDefault();
+      this.clearComments();
+      this.appendComments(sortedDate);
+    });
+
+    sortByLikeslink.addEventListener('click', (e) => {
+      e.preventDefault();
+      this.clearComments();
+      this.appendComments(sortedLikes);
+    });
+  }
+
+  /**
+   * clear comments after sort
+   */
+  clearComments() {
+    this.container.innerHTML = "";
   }
 
 }
