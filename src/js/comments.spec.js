@@ -58,4 +58,23 @@ describe('Comments', () => {
     expect(appendComments).toHaveBeenCalled();
   });
 
+  test("sortBy", () => {
+    const sortBy = jest.spyOn(comments, 'sortBy');
+    const appendComments = jest.spyOn(comments, 'appendComments');
+    comments.sortBy(mockCommentsData);
+    expect(sortBy).toHaveBeenCalled();
+    document.querySelector('.sort__date').click();
+    expect(appendComments).toHaveBeenCalled();
+    document.querySelector('.sort__likes').click();
+    expect(appendComments).toHaveBeenCalled();
+  });
+
+  test("clearComments", () => {
+    const clearComments = jest.spyOn(comments, 'clearComments');
+    console.log(document.querySelector('.article__comments-num').children);
+    comments.clearComments();
+    expect(clearComments).toHaveBeenCalled();
+    expect(document.querySelector('.article__comments-num').innerHTML).toBe('');
+  });
+
 });
