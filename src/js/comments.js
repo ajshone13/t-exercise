@@ -77,7 +77,7 @@ class Comments {
    * @return string
    */
   commentHTMLMarkup(comment) {
-    const date = new Date(comment.date).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' });
+    const date = new Date(comment.date).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short', hour12: true }).replace(',','');
     return `
       <li id="${comment.id}" class="article__comments-list-item">
         <div class="item__header">
