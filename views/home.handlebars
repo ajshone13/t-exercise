@@ -4,7 +4,7 @@
       <div class="article__header">
         <h1>{{ article.title }}</h1>
         <p>{{ article.standfirst }}</p>
-        <span class="article__date">{{ article.date }}</span>
+        <span class="article__date">{{dateFormat article.date "dddd, MMMM Do YYYY, h:mm:ss a"}}</span>
       </div>
     </div>
     <div class="article__row">

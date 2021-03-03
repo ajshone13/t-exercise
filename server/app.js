@@ -2,7 +2,7 @@ const express = require('express');
 const exphbs  = require('express-handlebars');
 const router = require('./router');
 
-// DATA
+// data
 const meta = require("./content/meta.json");
 const article = require("./content/article.json");
 const related = require("./content/posts.json");
@@ -12,6 +12,10 @@ const port = 3000;
 
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
+
+// formatting date helper
+var hbs = exphbs.create({});
+hbs.handlebars.registerHelper('dateFormat', require('handlebars-dateformat'));
 
 app.set('meta', meta);
 app.set('article', article.post);

@@ -77,11 +77,12 @@ class Comments {
    * @return string
    */
   commentHTMLMarkup(comment) {
+    const date = new Date(comment.date).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' });
     return `
       <li id="${comment.id}" class="article__comments-list-item">
         <div class="item__header">
           <span class="user">${comment.name}</span>
-          <span class="date">${comment.date}</span>
+          <span class="date">${date}</span>
           <span class="likes">${comment.likes} likes</span>
         </div>
         <div class="item__content"><p>${comment.body}</p></div>
