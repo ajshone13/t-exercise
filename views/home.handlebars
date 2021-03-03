@@ -9,7 +9,7 @@
     </div>
     <div class="article__row">
       <div class="article__main">
-        <img class="article__img" src={{ article.image }} alt={{{ article.title }}} />
+        <img class="article__img" src="{{ article.image }}" alt="{{ article.title }}" />
         <div class="article__row hide-md">
           <div class="article__header">
             <h1>{{ article.title }}</h1>
@@ -38,7 +38,7 @@
         <ul class="related__articles">
           {{#each related}}
           <li class="related__articles-item">
-            <img src={{ this.thumbnail }} alt={{ this.title }} />
+            <img src="{{ this.thumbnail }}" alt="{{ this.title }}" />
             <div class="related__articles-item-title">
               <h3>{{ this.title }}</h3>
               <a href="/">Read more</a>
