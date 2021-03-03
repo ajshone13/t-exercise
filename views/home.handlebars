@@ -1,11 +1,52 @@
 <main>
   <section class="article">
-    // ARTICLE HEADER
-
-    // ARTICLE IMG
-    // ARTICLE CONTENT
-    // ARTICLE COMMENTS
-
-    // ARTICLE RELATED STORIES
+    <div class="article__row hide-sm">
+      <div class="article__header">
+        <h1>{{ article.title }}</h1>
+        <p>{{ article.standfirst }}</p>
+        <span class="article__date">{{ article.date }}</span>
+      </div>
+    </div>
+    <div class="article__row">
+      <div class="article__main">
+        <img class="article__img" src={{ article.image }} alt={{{ article.title }}} />
+        <div class="article__row hide-md">
+          <div class="article__header">
+            <h1>{{ article.title }}</h1>
+            <p>{{ article.standfirst }}</p>
+            <span class="article__date">{{ article.date }}</span>
+          </div>
+        </div>
+        <div class="article__row">
+          <article class="article__body">
+            {{{ article.body }}}
+            <div class="article__comments">
+              <div class="article__comments-header">
+                <div class="article__comments-num"></div>
+                <div class="article__comments-sort">
+                  <span>Sort:<a href="#" class="sort__likes">Likes</a> | <a href="#"
+                      class="sort__date">Newest</a></span>
+                </div>
+              </div>
+              <ul class="article__comments-list"></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+      <aside class="article__related">
+        <h2>More Stories</h2>
+        <ul class="related__articles">
+          {{#each related}}
+          <li class="related__articles-item">
+            <img src={{ this.thumbnail }} alt={{ this.title }} />
+            <div class="related__articles-item-title">
+              <h3>{{ this.title }}</h3>
+              <a href="/">Read more</a>
+            </div>
+          </li>
+          {{/each}}
+        </ul>
+      </aside>
+    </div>
   </section>
 </main>
