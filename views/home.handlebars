@@ -24,8 +24,8 @@
               <div class="article__comments-header">
                 <div class="article__comments-num"></div>
                 <div class="article__comments-sort">
-                  <span>Sort: <a href="#" class="sort__likes">Likes</a> | <a href="#"
-                      class="sort__date">Newest</a></span>
+                  <span>Sort: <a href="#" title="sort by likes" class="sort__likes">Likes</a> | <a
+                      title="sort by newest" href="#" class="sort__date">Newest</a></span>
                 </div>
               </div>
               <ul class="article__comments-list"></ul>
@@ -41,7 +41,7 @@
             <img src="{{ this.thumbnail }}" alt="{{ this.title }}" />
             <div class="related__articles-item-title">
               <h3>{{ this.title }}</h3>
-              <a href="/">Read more</a>
+              <a href="/" title="Read more">Read more</a>
             </div>
           </li>
           {{/each}}
