@@ -1,1 +1,1 @@
-# frontend-exersise
+# frontend-exercise
