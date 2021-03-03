@@ -1,0 +1,24 @@
+main {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	padding: 0 1rem;
+
+	.article {
+		grid-column: auto / span 12;
+
+		.article__related {
+			grid-column: auto / span 12;
+
+			h2 {
+				font-size: 1.5rem;
+				font-weight: bold;
+				margin-bottom: 1rem;
+			}
+
+			@media screen and (min-width: 992px) {
+				grid-column: auto / span 3;
+				grid-column-start: 10;
+			}
+		}
+	}
+}

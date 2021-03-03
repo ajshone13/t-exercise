@@ -1,0 +1,11 @@
+.article__row.hide-sm {
+	@media screen and (max-width: 991px) {
+		display: none;
+	}
+}
+
+.article__row.hide-md {
+	@media screen and (min-width: 992px) {
+		display: none;
+	}
+}

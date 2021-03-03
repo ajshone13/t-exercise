@@ -1,0 +1,56 @@
+.article__comments {
+	.article__comments-sort {
+		font-family: sans-serif;
+
+		a {
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.article__comments-num {
+		font-size: 1.2rem;
+		font-weight: bold;
+	}
+
+	.article__comments-list {
+		.article__comments-list-item {
+			padding-bottom: 1rem;
+			border-bottom: 1px solid grey;
+
+			.item__header {
+				display: flex;
+				align-items: center;
+				margin: 1rem 0;
+
+				.user {
+					margin-right: 1rem;
+					font-size: 1.1rem;
+					font-weight: bold;
+				}
+
+				.date {
+					font-family: sans-serif;
+					font-size: 0.8rem;
+					color: grey;
+				}
+
+				.likes {
+					margin-left: auto;
+					font-size: 0.8rem;
+					font-family: sans-serif;
+				}
+			}
+
+			.item__content {
+				p {
+					font-family: sans-serif;
+					line-height: 1.5rem;
+				}
+			}
+		}
+	}
+}

@@ -1,2 +1,11 @@
-@import 'core/reset.css';
-@import 'elements/site-logo.css';
+@import "core/reset.css";
+@import "elements/site-logo.css";
+
+/* article */
+@import "elements/main.css";
+@import "elements/article.css";
+@import "elements/related.css";
+@import "elements/comments.css";
+
+/* helpers */
+@import "elements/helpers.css";

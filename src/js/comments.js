@@ -65,6 +65,8 @@ class Comments {
   appendCommentsNum() {
     const commentsNumContainer = document.querySelector('.article__comments-num');
 
+
+    // TODO: add icon before text
     if (this.commentsData.length) {
       commentsNumContainer.insertAdjacentHTML('beforeend', `<span>${this.commentsData.length} comments</span>`);
     }
