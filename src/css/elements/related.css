@@ -16,6 +16,7 @@
 			height: 100px;
 			object-fit: cover;
 			margin-right: 1rem;
+			flex: 1 0 auto;
 		}
 
 		.related__articles-item-title {
